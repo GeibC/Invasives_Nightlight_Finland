@@ -1,0 +1,5 @@
+# Input data (large, third-party) and generated rasters are not part of the repository
+data/
+output/
+.ipynb_checkpoints/
+__pycache__/

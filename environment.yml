@@ -1,0 +1,14 @@
+name: invasives-nightlight
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy
+  - pandas
+  - geopandas
+  - rasterio
+  - scipy
+  - statsmodels
+  - matplotlib
+  - cartopy
+  - jupyterlab
