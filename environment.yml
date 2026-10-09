@@ -11,4 +11,5 @@ dependencies:
   - statsmodels
   - matplotlib
   - cartopy
+  - earthengine-api
   - jupyterlab

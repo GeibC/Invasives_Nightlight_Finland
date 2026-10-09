@@ -47,9 +47,14 @@ conda activate invasives-nightlight
 jupyter lab Invasives_Nightlight_Finland.ipynb
 ```
 
-Download the input data (see below) into `data/`, or change `DATA_DIR` in the configuration cell.
-The data are not included in this repository. The night-time light file is a global raster of about
-12 GB. Only the window covering Finland is read.
+The night-time lights are downloaded automatically from Google Earth Engine in step 0
+(about 2 MB, Finland only). This needs an [Earth Engine account](https://earthengine.google.com/):
+set `GEE_PROJECT` in the configuration cell to your own Google Cloud project, and sign in in the
+browser on the first run. The download is the same product and pixel grid as the global file from
+the Earth Observation Group. To use that file instead, point `NL_FILE` to it.
+
+Download the other input data (see below) into `data/`, or change `DATA_DIR` in the configuration
+cell. The data are not included in this repository.
 
 ## Data sources
 
@@ -57,7 +62,7 @@ Please cite the original datasets if you reuse this work.
 
 | Dataset | File | Citation |
 |---|---|---|
-| VIIRS Nighttime Lights (VNL) v2, annual 2024, *average_masked* | `VNL_npp_2024_global_vcmslcfg_v2_c202502261200.average_masked.dat.tif` | Elvidge, C.D., Zhizhin, M., Ghosh, T., Hsu, F.-C., Taneja, J. (2021). Annual time series of global VIIRS nighttime lights derived from monthly averages: 2012 to 2019. *Remote Sensing* 13(5), 922. https://doi.org/10.3390/rs13050922. Data: Earth Observation Group, Colorado School of Mines, https://eogdata.mines.edu/products/vnl/ |
+| VIIRS Nighttime Lights (VNL) v2, annual 2024, *average_masked* | `viirs_vnl_2024_average_masked_finland.tif`, downloaded in step 0 from Earth Engine (`NOAA/VIIRS/DNB/ANNUAL_V22`) | Elvidge, C.D., Zhizhin, M., Ghosh, T., Hsu, F.-C., Taneja, J. (2021). Annual time series of global VIIRS nighttime lights derived from monthly averages: 2012 to 2019. *Remote Sensing* 13(5), 922. https://doi.org/10.3390/rs13050922. Data: Earth Observation Group, Colorado School of Mines, https://eogdata.mines.edu/products/vnl/ |
 | Finnish invasive species observations (GBIF occurrence download, tab-separated) | `invasive.csv` | Finnish Biodiversity Information Facility (FinBIF). Finnish invasive species observations. https://doi.org/10.15468/7bwhuf, accessed via GBIF.org. CC BY 4.0. <!-- TODO: add the DOI of your own GBIF download (shown on the download page) --> |
 | Country boundary (Finland) | `fi_shape/fi.shp` | simplemaps, https://simplemaps.com <!-- TODO: product name and licence --> |
 | Coastlines and borders (maps) | via Cartopy | Natural Earth, https://www.naturalearthdata.com (public domain) |
